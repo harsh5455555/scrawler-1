@@ -7,7 +7,7 @@ Light weight tools for heavy weight PHP devloper.
 
 
 Some list of features of Scrawler are :
-* Automatic RESTful routing system which makes it easy to build API.
+*  Automatic RESTful routing system which makes it easy to build API.
 *  Dead simple PHP templating engine to steep your learning curve and increase productivity.
 *  Easy to use mysql database wrapper class via joshcam/PHP-MySQLi-Database-Class.
 *  Light weight SMTP mailer. 
@@ -16,7 +16,7 @@ Some list of features of Scrawler are :
 
 Getting Started
 ---------------
-* Download the latest release from https://github.com/GoStalk/Scrawler/releases.
+* Download the latest release from https://github.com/scrawler-php/scrawler/releases.
 * Extract it and copy to your www or htdocs directory.
 * Goto /App/config.ini and insert your database configuration , you can configure rest of application later.
 * BRAVO YOU ARE DONE ! Its time to start devloping your awsome app. 
