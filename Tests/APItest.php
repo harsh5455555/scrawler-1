@@ -22,7 +22,7 @@ class APITest extends \PHPUnit_Framework_TestCase {
      $client->request('GET', '/get', [
     'headers' => [
         'X-SCRAWLER-USERNAME'      => "scrawler",
-        'X-SCRAWLER-PASSWORD'      => "xjb48b43e2z"         ]
+        'X-SCRAWLER-PASSWORD'      => "xjb48b43e2"         ]
 ]);
 
     $response = $request->send();
