@@ -16,11 +16,10 @@ before_script:
    - sudo apt-get update
    - sudo apt-get install -y --force-yes apache2 libapache2-mod-fastcgi make 
    - sudo apt-get install -y --force-yes php5-dev php-pear php5-mysql php5-curl php5-gd php5-json
-
    - mysql -e 'create database Scrawler;'
    - sudo cp -f $TRAVIS_BUILD_DIR/htaccess.dist $TRAVIS_BUILD_DIR/.htaccess
    - php -S localhost:8000 httpdocs/index.php &
- - sleep 3
+   - sleep 3
 
    
 script: phpunit --configuration phpunit.xml --coverage-text
