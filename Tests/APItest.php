@@ -11,7 +11,7 @@ namespace Tests;
 use GuzzleHttp\Client;
 
 
-class APITest extends \PHPUnit_Framework_TestCase {
+class ApiTest extends \PHPUnit_Framework_TestCase {
 
 
     function testGET(){

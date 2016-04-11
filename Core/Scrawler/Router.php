@@ -32,7 +32,7 @@ class Router {
      */
     function __construct() {
         $api = new \Scrawler\Api();
-        if (!$api->isAPI) {
+        if (!$api->isAPI()) {
             $this->route();
         } else {
             if ($api->authAPI()) {
