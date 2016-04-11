@@ -8,14 +8,13 @@
  */
 
 namespace Tests;
-use GuzzleHttp\Client;
 
 
 class APITest extends \PHPUnit_Framework_TestCase {
 
 
     function testGET(){
-    $client = new Client([
+    $client = new \GuzzleHttp\Client([
     // Base URI is used with relative requests
     'base_uri' => 'http://localhost:8000',
      ]);
