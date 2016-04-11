@@ -40,6 +40,7 @@ class Router {
                 $t->setType('json');
                 $this->route();
             } else {
+                 header(404);
                 return "could not authenticate your API request";
             }
         }
