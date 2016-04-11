@@ -67,7 +67,7 @@ class Client implements ClientInterface
 
         // Convert the base_uri to a UriInterface
         if (isset($config['base_uri'])) {
-            $config['base_uri'] = \Psr7\uri_for($config['base_uri']);
+            $config['base_uri'] = Psr7\uri_for($config['base_uri']);
         }
 
         $this->configureDefaults($config);
