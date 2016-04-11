@@ -8,9 +8,10 @@
  */
 
 namespace Tests;
+use GuzzleHttp\Client;
+
 
 class APITest extends \PHPUnit_Framework_TestCase {
-    use GuzzleHttp\Client;
 
 
     function testGET(){
@@ -19,10 +20,10 @@ class APITest extends \PHPUnit_Framework_TestCase {
     'base_uri' => 'http://localhost:8000',
      ]);
      
-     $client->request('GET', '/get', [
+     $client->request('GET', '/', [
     'headers' => [
         'X-SCRAWLER-USERNAME'      => "scrawler",
-        'X-SCRAWLER-PASSWORD'      => "xjb48b43e2"         ]
+        'X-SCRAWLER-PASSWORD'      => "xjb48b43e2z"         ]
 ]);
 
     $response = $request->send();
