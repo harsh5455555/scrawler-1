@@ -1,0 +1,42 @@
+language: php
+php:
+ - 5.4
+ - 5.5
+ - 5.6
+ 
+
+branches:
+  only:
+    - master
+  
+services:
+  - mysql    
+
+before_script:
+   - sudo apt-get update
+   - sudo apt-get install -y --force-yes apache2 libapache2-mod-fastcgi make 
+   - sudo apt-get install -y --force-yes php5-dev php-pear php5-mysql php5-curl php5-gd php5-json
+   # enable php-fpm
+   - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+   - sudo a2enmod rewrite actions fastcgi alias
+   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
+   # configure apache virtual hosts
+   - sudo cp -f Tests/travis-ci-apache /etc/apache2/sites-available/default
+   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
+   - mysql -e 'create database Scrawler;'
+   - sudo cp -f $TRAVIS_BUILD_DIR/htaccess.dist $TRAVIS_BUILD_DIR/.htaccess
+   - sudo service apache2 restart
+
+   
+script: phpunit --configuration phpunit.xml --coverage-text
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
+    
+webhooks:
+    urls:
+      https://webhooks.gitter.im/e/bb92df19baa622db6546
+    on_success: change  
+    on_failure: always  
+    on_start: never     
