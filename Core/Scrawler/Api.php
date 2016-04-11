@@ -38,6 +38,7 @@ class Api {
         if (isset($header['X-SCRAWLER-USERNAME']) && isset($header['X-SCRAWLER-PASSWORD'])) {
             $this->username = $header['X-SCRAWLER-USERNAME'];
             $this->password = $header['X-SCRAWLER-PASSWORD'];
+            echo 'API call';
             return TRUE;
         }
 
@@ -57,6 +58,7 @@ class Api {
             $user = $config['APIusername'];
             $pass = $config['APIpassword'];
             if ($this->username == $user && $this->password == $pass) {
+                echo 'Auth success';
                 return TRUE;
             }
             return FALSE;
