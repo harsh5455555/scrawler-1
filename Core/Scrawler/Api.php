@@ -35,9 +35,9 @@ class Api {
     function isAPI() {
         $http = new \Scrawler\Http();
         $header = $http->getallheaders();
-        if (isset($header[X-SCRAWLER-USERNAME]) && isset($header[X-SCRAWLER-PASSWORD])) {
-            $this->username = $header[X-SCRAWLER-USERNAME];
-            $this->password = $header[X-SCRAWLER-PASSWORD];
+        if (isset($header['X-SCRAWLER-USERNAME']) && isset($header['X-SCRAWLER-PASSWORD'])) {
+            $this->username = $header['X-SCRAWLER-USERNAME'];
+            $this->password = $header['X-SCRAWLER-PASSWORD'];
             return TRUE;
         }
 
