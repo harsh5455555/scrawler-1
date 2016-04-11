@@ -10,7 +10,7 @@
 namespace Tests;
 
 
-class APITest extends \PHPUnit_Framework_TestCase {
+class HomeApiTest extends \PHPUnit_Framework_TestCase {
 
 
     function testGET(){
