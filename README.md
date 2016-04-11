@@ -1,7 +1,7 @@
 # Scrawler
 Light weight tools for heavy weight PHP devloper.
 
-[![Build Status](https://travis-ci.org/scrawler-php/scrawler.svg?branch=master)](https://travis-ci.org/GoStalk/Scrawler)
+[![Build Status](https://travis-ci.org/scrawler-php/scrawler.svg?branch=master)](https://travis-ci.org/scrawler-php/scrawler)
 [![Apache License](https://img.shields.io/badge/license-APACHE-brightgreen.svg)]()
 [![Gitter chat](https://badges.gitter.im/GoStalk.png)](https://gitter.im/GoStalk "Gitter chat")
 
